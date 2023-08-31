@@ -11,9 +11,11 @@ const ItemSelected = (props) => {
 
     const submitEvent = () => {
 
+        console.log({quantity});
+
         const item = {
             name: name,
-            quantity: parseInt(quantity),
+            quantity: parseInt(quantity + 10),
         };
 
         if(action === "Reduce") {
@@ -22,6 +24,7 @@ const ItemSelected = (props) => {
                 payload: item,
             });
         } else {
+
                 dispatch({
                     type: 'ADD_QUANTITY',
                     payload: item,
